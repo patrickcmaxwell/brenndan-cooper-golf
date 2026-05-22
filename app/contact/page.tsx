@@ -62,75 +62,69 @@ export default function ContactPage() {
         headline="Let’s Talk About Your Game"
         sub="Phone, email, or the booking calendar — pick what works. Brenndan and the team get back fast."
         image="/uploads/2025/12/480830633_2875408172646768_479899102765999617_n.jpg"
-        primaryCta={{ label: 'Book Now', href: site.bookNowUrl, external: true }}
-        secondaryCta={{ label: 'See Programs', href: '/coaching' }}
+        align="center"
       />
 
-      {/* Floating portrait + greeting + contact methods */}
-      <section className="relative bg-white pb-24 md:pb-32">
-        {/* Portrait — overlaps the hero above, becomes the focal point */}
-        <div className="relative z-20 mx-auto -mt-28 flex justify-center sm:-mt-36 md:-mt-44">
-          <Reveal y={32}>
-            <div className="group relative">
-              {/* Soft crimson aura */}
-              <div
-                aria-hidden
-                className="absolute inset-0 -m-8 rounded-full bg-crimson/25 blur-3xl"
-              />
-              {/* Spinning conic ring */}
-              <div
-                aria-hidden
-                className="absolute -inset-3 rounded-full opacity-80"
-                style={{
-                  background:
-                    'conic-gradient(from 90deg, rgba(194,53,40,0.85) 0deg, rgba(194,53,40,0) 120deg, rgba(194,53,40,0) 240deg, rgba(255,87,72,0.6) 360deg)',
-                  animation: 'spin 14s linear infinite',
-                  WebkitMask:
-                    'radial-gradient(closest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))',
-                  mask: 'radial-gradient(closest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))',
-                }}
-              />
-              {/* Portrait */}
-              <div className="relative h-52 w-52 overflow-hidden rounded-full border-[6px] border-white bg-navy-950 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.45)] sm:h-64 sm:w-64 md:h-72 md:w-72">
-                <Image
-                  src="/uploads/2025/12/fb5a20481c79f848dd7d0d1b66b83a20_l.jpg"
-                  alt="Brenndan Cooper"
-                  fill
-                  priority
-                  sizes="288px"
-                  style={{ objectFit: 'cover' }}
-                  className="transition-transform duration-[1500ms] ease-out group-hover:scale-[1.06]"
+      {/* Greeting block — portrait on left, copy on right (no overlap into hero) */}
+      <section className="relative bg-white pt-24 md:pt-32">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-[auto_1fr] lg:gap-16">
+            {/* Portrait */}
+            <Reveal y={28}>
+              <div className="group relative mx-auto w-fit lg:mx-0">
+                <div aria-hidden className="absolute inset-0 -m-8 rounded-full bg-crimson/15 blur-3xl" />
+                <div
+                  aria-hidden
+                  className="absolute -inset-3 rounded-full opacity-80"
+                  style={{
+                    background:
+                      'conic-gradient(from 90deg, rgba(194,53,40,0.85) 0deg, rgba(194,53,40,0) 120deg, rgba(194,53,40,0) 240deg, rgba(255,87,72,0.6) 360deg)',
+                    animation: 'spin 14s linear infinite',
+                    WebkitMask:
+                      'radial-gradient(closest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))',
+                    mask: 'radial-gradient(closest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))',
+                  }}
                 />
+                <div className="relative h-52 w-52 overflow-hidden rounded-full border-[6px] border-white bg-navy-950 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.45)] sm:h-60 sm:w-60 md:h-64 md:w-64">
+                  <Image
+                    src="/uploads/2025/12/fb5a20481c79f848dd7d0d1b66b83a20_l.jpg"
+                    alt="Brenndan Cooper"
+                    fill
+                    priority
+                    sizes="256px"
+                    style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-[1500ms] ease-out group-hover:scale-[1.06]"
+                  />
+                </div>
+                <div className="absolute -bottom-2 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 rounded-full bg-white px-4 py-2 shadow-[0_18px_30px_-15px_rgba(0,0,0,0.35)] ring-1 ring-navy-950/5">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inset-0 inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                  </span>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-950">
+                    Taking new players
+                  </span>
+                </div>
               </div>
-              {/* Availability pill */}
-              <div className="absolute -bottom-2 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 rounded-full bg-white px-4 py-2 shadow-[0_18px_30px_-15px_rgba(0,0,0,0.35)] ring-1 ring-navy-950/5">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inset-0 inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-950">
-                  Taking new players
-                </span>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+            </Reveal>
 
-        {/* Greeting */}
-        <div className="relative z-10 mx-auto mt-14 max-w-2xl px-6 text-center sm:px-8 md:mt-16">
-          <Reveal>
-            <div className="eyebrow">Hi, I’m Brenndan</div>
-            <h2 className="mt-3 font-display text-3xl font-semibold uppercase leading-tight tracking-tight text-navy-950 sm:text-4xl md:text-5xl">
-              Let’s talk about your game.
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-muted">
-              The fastest way to get started is a call, an email, or the booking calendar. I’ll personally reach back out within a day to set up an assessment.
-            </p>
-          </Reveal>
+            {/* Greeting copy */}
+            <Reveal delay={0.08}>
+              <div className="text-center lg:text-left">
+                <div className="eyebrow">Hi, I’m Brenndan</div>
+                <h2 className="mt-3 font-display text-3xl font-semibold uppercase leading-[1.05] tracking-tight text-navy-950 sm:text-4xl md:text-5xl">
+                  Let’s talk about your game.
+                </h2>
+                <p className="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-muted lg:mx-0">
+                  The fastest way to get started is a call, an email, or the booking calendar. I’ll personally reach back out within a day to set up an assessment.
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
 
         {/* Asymmetric contact bento — Book Now is the hero card */}
-        <div className="mx-auto mt-16 max-w-7xl px-6 sm:px-8 md:mt-20">
+        <div className="mx-auto mt-16 max-w-7xl px-6 pb-24 sm:px-8 md:mt-20 md:pb-32">
           <div className="grid auto-rows-[180px] grid-cols-2 gap-4 sm:auto-rows-[200px] lg:grid-cols-4">
             {/* Call */}
             <Reveal delay={0} className="contents">
